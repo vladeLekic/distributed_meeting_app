@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/OnBoardingApplication" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="UserData_PartitionCount" Value="1" />
+    <Parameter Name="UserData_MinReplicaSetSize" Value="1" />
+    <Parameter Name="UserData_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="MeetingData_PartitionCount" Value="1" />
+    <Parameter Name="MeetingData_MinReplicaSetSize" Value="1" />
+    <Parameter Name="MeetingData_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="WorkerService_InstanceCount" Value="1" />
+    <Parameter Name="UsersOrchestrator_InstanceCount" Value="1" />
+    <Parameter Name="AnalyticAPI_ASPNETCORE_ENVIRONMENT" Value="Development" />
+    <Parameter Name="AnalyticAPI_InstanceCount" Value="1" />
+    <Parameter Name="AnalyticService_PartitionCount" Value="1" />
+    <Parameter Name="AnalyticService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="AnalyticService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="MeetingOrchestrator_PartitionCount" Value="1" />
+    <Parameter Name="MeetingOrchestrator_MinReplicaSetSize" Value="1" />
+    <Parameter Name="MeetingOrchestrator_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="UserData_PartitionCount" Value="1" />
+    <Parameter Name="UserData_MinReplicaSetSize" Value="1" />
+    <Parameter Name="UserData_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="UserAPI_ASPNETCORE_ENVIRONMENT" Value="Development" />
+    <Parameter Name="UserAPI_InstanceCount" Value="1" />
+  </Parameters>
+</Application>

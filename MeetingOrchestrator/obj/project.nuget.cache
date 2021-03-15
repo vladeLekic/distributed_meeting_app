@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "NF2RlZU6X+VQQXXZjKtTcjtfYlxIQtGCRz0RzYlD1BPTUd6ipV5ZZEqvG4bjXNqdrWM7qOQTr9m4JIhSxEodeg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vladelekic\\Desktop\\OnBoardingApplication\\MeetingOrchestrator\\MeetingOrchestrator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric\\7.2.452\\microsoft.servicefabric.7.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data\\4.2.452\\microsoft.servicefabric.data.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data.extensions\\4.2.452\\microsoft.servicefabric.data.extensions.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data.interfaces\\4.2.452\\microsoft.servicefabric.data.interfaces.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.diagnostics.internal\\4.2.452\\microsoft.servicefabric.diagnostics.internal.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.fabrictransport.internal\\4.2.452\\microsoft.servicefabric.fabrictransport.internal.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.services\\4.2.452\\microsoft.servicefabric.services.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.services.remoting\\4.2.452\\microsoft.servicefabric.services.remoting.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.0\\microsoft.netcore.app.runtime.win-x64.3.1.0.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.0\\microsoft.aspnetcore.app.runtime.win-x64.3.1.0.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.0\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "5kS4fVXEzimo67b4eyF4X3yRGOgMNBndKZ6jVFU+KniaeFZwYj4AhvRLZOGiYd+VRO8Hy34bTeGRFCAdLwoYEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vladelekic\\Desktop\\OnBoardingApplication\\Communication\\Communication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric\\7.2.452\\microsoft.servicefabric.7.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data\\4.2.452\\microsoft.servicefabric.data.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data.extensions\\4.2.452\\microsoft.servicefabric.data.extensions.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.data.interfaces\\4.2.452\\microsoft.servicefabric.data.interfaces.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.diagnostics.internal\\4.2.452\\microsoft.servicefabric.diagnostics.internal.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.fabrictransport.internal\\4.2.452\\microsoft.servicefabric.fabrictransport.internal.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.services\\4.2.452\\microsoft.servicefabric.services.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\microsoft.servicefabric.services.remoting\\4.2.452\\microsoft.servicefabric.services.remoting.4.2.452.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\vladelekic\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

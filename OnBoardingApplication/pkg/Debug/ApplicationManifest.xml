@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="OnBoardingApplicationType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" ManifestId="077d3b7e-2e10-4229-a207-13f833198c7d">
+  <Parameters>
+    <Parameter Name="UserData_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="UserData_PartitionCount" DefaultValue="1" />
+    <Parameter Name="UserData_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="MeetingData_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="MeetingData_PartitionCount" DefaultValue="1" />
+    <Parameter Name="MeetingData_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="WorkerService_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="UsersOrchestrator_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="AnalyticAPI_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="AnalyticAPI_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="AnalyticService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="AnalyticService_PartitionCount" DefaultValue="1" />
+    <Parameter Name="AnalyticService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="MeetingOrchestrator_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="MeetingOrchestrator_PartitionCount" DefaultValue="1" />
+    <Parameter Name="MeetingOrchestrator_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="UserAPI_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
+    <Parameter Name="UserAPI_InstanceCount" DefaultValue="-1" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="UserDataPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="MeetingDataPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="WorkerServicePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="UsersOrchestratorPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="AnalyticAPIPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[AnalyticAPI_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="AnalyticServicePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="MeetingOrchestratorPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="UserAPIPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[UserAPI_ASPNETCORE_ENVIRONMENT]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="UserData" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="UserDataType" TargetReplicaSetSize="[UserData_TargetReplicaSetSize]" MinReplicaSetSize="[UserData_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[UserData_PartitionCount]" LowKey="0" HighKey="7" />
+        <LoadMetrics>
+          <LoadMetric Name="RequestCount" DefaultLoad="15" Weight="High" />
+        </LoadMetrics>
+      </StatefulService>
+    </Service>
+    <Service Name="MeetingData" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="MeetingDataType" TargetReplicaSetSize="[MeetingData_TargetReplicaSetSize]" MinReplicaSetSize="[MeetingData_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[MeetingData_PartitionCount]" LowKey="0" HighKey="15" />
+        <LoadMetrics>
+          <LoadMetric Name="RequestCount" DefaultLoad="20" Weight="High" />
+        </LoadMetrics>
+      </StatefulService>
+    </Service>
+    <Service Name="WorkerService" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="WorkerServiceType" InstanceCount="[WorkerService_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="UsersOrchestrator" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="UsersOrchestratorType" InstanceCount="[UsersOrchestrator_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="AnalyticAPI" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="AnalyticAPIType" InstanceCount="[AnalyticAPI_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="AnalyticService" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="AnalyticServiceType" TargetReplicaSetSize="[AnalyticService_TargetReplicaSetSize]" MinReplicaSetSize="[AnalyticService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[AnalyticService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="MeetingOrchestrator" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="MeetingOrchestratorType" TargetReplicaSetSize="[MeetingOrchestrator_TargetReplicaSetSize]" MinReplicaSetSize="[MeetingOrchestrator_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[MeetingOrchestrator_PartitionCount]" LowKey="0" HighKey="0" />
+      </StatefulService>
+    </Service>
+    <Service Name="UserAPI" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="UserAPIType" InstanceCount="[UserAPI_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>
